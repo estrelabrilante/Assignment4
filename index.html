@@ -23,13 +23,14 @@
       <!-- available classes: "user1" and "user2" -->
       <!-- binding dynamically -->
       <!-- Every user input updates as class -->
-      <p :class="inputClass">Style me</p>
-      <button>Toggle paragraph</button>
+      <p :class="paraClass">Style me</p>
+      <!-- Click listener -->
+      <button @click="toggleParagraphVisibility">Toggle paragraph</button>
       <!-- 2) Use the "visible" and "hidden" classes to show/hide the above paragraph-->
       <!-- Clicking the button should toggle between the two options -->
       <!-- 3) Add dynamic inline styling to the below paragraph and let the user enter background-color -->
-      <input type="text" />
-      <p>Style in Line</p>
+      <input type="text" v-model="inputBackgroundColor" />
+      <p :style="{backgroundColor:inputBackgroundColor}">Style in Line</p>
     </section>
   </body>
 </html>
